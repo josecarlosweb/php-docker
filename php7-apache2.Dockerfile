@@ -31,3 +31,5 @@ VOLUME /root/.composer
 VOLUME /.composer
 VOLUME /.config
 USER ${UID}
+
+RUN a2enmod rewrite
