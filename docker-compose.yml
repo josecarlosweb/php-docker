@@ -9,7 +9,6 @@ services:
         - "UID=${UID}"
         - "GID=${GID}"
         - "USER=${USER}"
-
     image: ccarvalho/php7-apache2-dockerfile
     container_name: php7-apache2
     restart: always
