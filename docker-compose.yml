@@ -5,7 +5,7 @@ services:
     build:
       dockerfile: php7-apache2.Dockerfile
       context: .
-    image: ccarvalho/php7-apache2.Dockerfile
+    image: ccarvalho/php7-apache2-dockerfile
     container_name: php7-apache2
     restart: always
     ports:
