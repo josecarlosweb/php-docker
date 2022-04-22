@@ -5,6 +5,11 @@ services:
     build:
       dockerfile: php7-apache2.Dockerfile
       context: .
+      args:
+        - "UID=${UID}"
+        - "GID=${GID}"
+        - "USER=${USER}"
+
     image: ccarvalho/php7-apache2-dockerfile
     container_name: php7-apache2
     restart: always
@@ -19,6 +24,7 @@ services:
 
   mysqldb:
     container_name: mysql
+    platform: linux/x86_64
     image: mysql:5.7
     restart: always
     volumes:

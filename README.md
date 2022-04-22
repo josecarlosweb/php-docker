@@ -14,11 +14,31 @@ It's a very simple dockerfile to create and environment for work sugins PHP and 
 ### Installation Steps (if applicable)
 
 1. Install Docker and docker compose
-2. Open a terminal
-3. Run the command `SERVER_DIRECTORY=PATH_TO_YOUR_PROJECT docker-compose up`
-4. Run `docker-compose up`
-5. Navigate to <http://127.0.0.1>
-6. Create your PHP scripts and files in the same place of `PATH_TO_YOUR_PROJECT` value.
+2. Create a file with name `.env` in the root path of this project
+3. Add the follow variables:
+```env
+SERVER_DIRECTORY=
+UID=
+GID=
+USER=
+``` 
+* `SERVER_DIRECTORY` is the absolute path of your project
+* `UID` is your user id. You can discover this value usinng the command: `id -u`
+* `GID` is your group id. You can discover dis value using the command : `id -g`
+* `USER` is the username of your host.
+* Example of `.env` file:
+```env
+SERVER_DIRECTORY=/Users/carlos/PhpProjects/my-project
+UID=501 // collected using id -u command
+GID=20 // collected using id -g command
+USER=carlos
+```
+
+4. Open a terminal.
+5. Run the command `docker-compose up`
+6. Run `docker-compose up`
+7. Navigate to <http://127.0.0.1>
+8. Create your PHP scripts and files in the same place of `PATH_TO_YOUR_PROJECT` value.
  
 ## Contributing
  
