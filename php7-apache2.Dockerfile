@@ -5,11 +5,17 @@ ARG USER
 FROM php:7.3-apache
 
 RUN apt-get update && apt-get install -y \
+    libpng-dev \
     zlib1g-dev \
     libzip-dev \
-    unzip
+    unzip \
+    libgd3 \
+    libxpm4
 
 RUN docker-php-ext-install pdo pdo_mysql zip
+
+RUN docker-php-ext-configure gd && \
+    docker-php-ext-install gd
 
 RUN pecl install xdebug && docker-php-ext-enable xdebug
 
