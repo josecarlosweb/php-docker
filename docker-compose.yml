@@ -3,6 +3,7 @@ version: '3'
 services:
   apache:
     build:
+      network: host
       dockerfile: php7-apache2.Dockerfile
       context: .
       args:
